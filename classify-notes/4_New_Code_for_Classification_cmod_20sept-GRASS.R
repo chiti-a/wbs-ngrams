@@ -63,7 +63,8 @@ save_data_csv <- function(test_data, iteration) {
 for (Test_n in 1:Test_N) {
   corr_vec <- c()
   Train_N <- nrow(train_data_warbler)
-  
+
+  ### need to randomised the order of sampling training notes such that the note assignment is not skewed towards the first series of notes
   for (Train_n in 1:Train_N) {
     correlation <- suppressMessages(suppressWarnings(
       warbleR::cross_correlation(
